@@ -1,6 +1,6 @@
 "use client";
 
-import { HoverEffect } from "@/components/ui/projects/card";
+import { HoverEffect } from "@/components/card";
 import React, { useState, useEffect } from "react";
 interface GithubProject {
   name: string;
