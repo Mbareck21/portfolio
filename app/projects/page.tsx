@@ -7,7 +7,7 @@ interface GithubProject {
   description: string | null;
   html_url: string;
 }
-const page = () => {
+const Page = () => {
   const [gitProjects, setGitProjects] = useState<GithubProject[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -53,4 +53,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
