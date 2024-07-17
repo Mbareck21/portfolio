@@ -1,5 +1,3 @@
-import { CodesCard } from "@/components/code-alangs";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 export default function Home() {
   return (
     <div className="h-[40rem] w-full rounded-md  relative flex flex-col items-center justify-center antialiased">
@@ -21,7 +19,6 @@ export default function Home() {
           clients and stakeholders.
         </p>
       </div>
-      {/* <BackgroundBeams /> */}
     </div>
   );
 }
