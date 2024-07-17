@@ -7,7 +7,7 @@ interface GithubProject {
   description: string | null;
   html_url: string;
 }
-const Page = () => {
+const ProjectsPage = () => {
   const [gitProjects, setGitProjects] = useState<GithubProject[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -34,9 +34,9 @@ const Page = () => {
   }, []);
   return (
     <div className="max-w-5xl mx-auto px-8 my-20">
-      {isLoading ? ( // Loading state
+      {isLoading ? (
         <p>Loading projects...</p>
-      ) : error ? ( // Error state
+      ) : error ? (
         <p>Error loading projects: {error.message}</p>
       ) : (
         <HoverEffect
@@ -53,4 +53,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ProjectsPage;
