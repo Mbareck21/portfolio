@@ -39,13 +39,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <>
-          <div className="relative  w-full">
-            <FloatingNav navItems={navItems} />
-          </div>
-          {children}
+        {" "}
+        <FloatingNav navItems={navItems} />
+        <div className="h-screen w-screen">
+          <div>{children}</div>
           <BackgroundBeams />
-        </>
+        </div>
       </body>
     </html>
   );
