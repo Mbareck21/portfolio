@@ -19,6 +19,11 @@ export default function RootLayout({
 }>) {
   const navItems = [
     {
+      name: "Home",
+      link: "/",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
       name: "About",
       link: "/about",
       icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
@@ -38,7 +43,7 @@ export default function RootLayout({
   ];
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} antialiased`}>
         {" "}
         <FloatingNav navItems={navItems} />
         <div className="h-screen w-screen">
