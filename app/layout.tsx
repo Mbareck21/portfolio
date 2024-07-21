@@ -43,7 +43,7 @@ export default function RootLayout({
   ];
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} text-neutral-500  antialiased`}>
         {" "}
         <FloatingNav navItems={navItems} />
         <div className="h-screen w-screen">
