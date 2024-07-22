@@ -45,10 +45,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} text-neutral-500  antialiased`}>
         {" "}
-        <FloatingNav navItems={navItems} />
-        <div className="h-screen w-screen">
-          <div>{children}</div>
-          <BackgroundBeams />
+        <div className="my-10">
+          <FloatingNav navItems={navItems} />
+        </div>
+        <div>
+          <div className="h-screen w-screen z-0">
+            <BackgroundBeams />
+            <div>{children}</div>
+          </div>
         </div>
       </body>
     </html>
