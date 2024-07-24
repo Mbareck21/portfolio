@@ -52,7 +52,7 @@ const ProjectsPage = () => {
           also uses a JavaScript filter method inside to render only public
           repositories that have description. We, additionally, display a
           loading message while the is being fetched with some{" "}
-          <span className="text-sky-500">error handling</span> .
+          <span className="text-sky-500">error handling</span>.
         </p>
       </div>
       {isLoading ? (
