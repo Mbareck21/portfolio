@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
@@ -84,7 +84,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className=" text-slate-300 max-w-sm mt-5 text-pretty text-left"
+                className=" text-slate-300 w-sm mt-5 text-pretty text-left lg:w-lg"
               >
                 {item.description}
               </motion.p>
