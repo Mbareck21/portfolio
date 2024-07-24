@@ -3,19 +3,32 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
-import { IconHome, IconMenu2, IconX } from "@tabler/icons-react";
+import {
+  IconUser,
+  IconMenu2,
+  IconMessage,
+  IconCode,
+  IconX,
+} from "@tabler/icons-react";
+const navItems = [
+  {
+    name: "About",
+    link: "/",
+    icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Projects",
+    link: "/projects",
+    icon: <IconCode className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+  {
+    name: "Contact",
+    link: "/contact",
+    icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+  },
+];
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
-}) => {
+export const FloatingNav = ({ className }: { className?: string }) => {
   const [showFullNav, setShowFullNav] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
 
