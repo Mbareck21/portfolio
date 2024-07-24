@@ -2,11 +2,13 @@
 
 import { HoverEffect } from "@/components/ui/card";
 import React, { useState, useEffect } from "react";
+
 interface GithubProject {
   name: string;
   description: string | null;
   html_url: string;
 }
+
 const ProjectsPage = () => {
   const [gitProjects, setGitProjects] = useState<GithubProject[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,21 +36,23 @@ const ProjectsPage = () => {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto px-8 mt-40">
+    <div className="max-w-5xl mx-auto px-8 mt-40 lg:text-xl">
       <div className="rounded-2xl h-full w-full p-4 overflow-hidden border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
         <h1 className="text-zinc-100 font-bold tracking-wide mt-4">
-          My GitHub Repos!
+          My GitHub Repositories!
         </h1>
         <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
-          This component displays some of my GitHub repositories by fetching
-          data from the GitHub API using fetch method, it uses React Hooks,
-          specifically useState and useEffect to manage the component's state
-          and fetch the data from the API respectively. It also uses a ternary
-          operator inside the map function to check if the repository's
-          description is not null before rendering the repository, this way I
-          render only the repositories that I wrote a description for. And it
-          also uses a ternary operator to check if the component is still
-          loading data from the API or not.
+          This component dynamically displays some of my{" "}
+          <span className="text-sky-500">GitHub</span> repositories by fetching
+          data from the GitHub <span className="text-sky-500">API</span> using
+          the <span className="text-sky-500">fetch</span> method, it uses React
+          Hooks, specifically <span className="text-sky-500">useState</span> and
+          <span className="text-sky-500"> useEffect</span> to manage the
+          component's state and fetch the data from the API respectively. It
+          also uses a JavaScript filter method inside to render only public
+          repositories that have description. We, additionally, display a
+          loading message while the is being fetched with some{" "}
+          <span className="text-sky-500">error handling</span> .
         </p>
       </div>
       {isLoading ? (
