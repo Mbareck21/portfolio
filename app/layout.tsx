@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { IconHome, IconMessage, IconUser, IconCode } from "@tabler/icons-react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const inter = Inter({ subsets: ["latin"] });

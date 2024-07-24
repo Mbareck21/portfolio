@@ -32,12 +32,33 @@ const ProjectsPage = () => {
     };
     fetchRepos();
   }, []);
+
   return (
-    <div className="max-w-5xl mx-auto px-8 my-20">
+    <div className="max-w-5xl mx-auto px-8 mt-40">
+      <div className="rounded-2xl h-full w-full p-4 overflow-hidden border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+        <h1 className="text-zinc-100 font-bold tracking-wide mt-4">
+          My GitHub Repos!
+        </h1>
+        <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
+          This component displays some of my GitHub repositories by fetching
+          data from the GitHub API using fetch method, it uses React Hooks,
+          specifically useState and useEffect to manage the component's state
+          and fetch the data from the API respectively. It also uses a ternary
+          operator inside the map function to check if the repository's
+          description is not null before rendering the repository, this way I
+          render only the repositories that I wrote a description for. And it
+          also uses a ternary operator to check if the component is still
+          loading data from the API or not.
+        </p>
+      </div>
       {isLoading ? (
-        <p>Loading projects...</p>
+        <p className="text-center text-lg font-bold text-amber-200 animate-pulse">
+          Loading projects...
+        </p>
       ) : error ? (
-        <p>Error loading projects: {error.message}</p>
+        <p className="text-center text-lg font-bold text-amber-200 animate-pulse">
+          Error loading projects: {error.message}
+        </p>
       ) : (
         <HoverEffect
           items={gitProjects

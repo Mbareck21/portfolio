@@ -67,7 +67,7 @@ const content = [
     ),
   },
   {
-    title: "A cool Fact About it",
+    title: "A Cool Fact About it",
     description:
       "In a viral video that racked up over half a million views in just two days, YouTube blogger Jimmy Bright argues that the Richat Structure, a geological dome in northwest Sahara also referred to as the Eye of the Sahara, is the most likely location of Atlantis.",
     content: (
