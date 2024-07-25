@@ -1,8 +1,6 @@
-
 "use client";
 import { useState } from "react";
 import { z } from "zod";
-export const runtime = "edge";
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
