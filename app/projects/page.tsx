@@ -48,8 +48,8 @@ const ProjectsPage = () => {
           the <span className="text-sky-500">fetch</span> method, it uses React
           Hooks, specifically <span className="text-sky-500">useState</span> and
           <span className="text-sky-500"> useEffect</span> to manage the
-          component's state and fetch the data from the API respectively. It
-          also uses a JavaScript filter method inside to render only public
+          component&apos;s state and fetch the data from the API respectively.
+          It also uses a JavaScript filter method inside to render only public
           repositories that have description. We, additionally, display a
           loading message while the is being fetched with some{" "}
           <span className="text-sky-500">error handling</span>.
