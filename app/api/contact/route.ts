@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server"; // Import from next/ser
 import { connectToDatabase } from "@/utils/mongodb";
 import Message from "@/models/message";
 import { z } from "zod";
-
+export const runtime = "edge"; // 'nodejs' (default) | 'edge'
 const contactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
