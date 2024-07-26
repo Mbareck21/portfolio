@@ -1,8 +1,9 @@
 "use server";
-
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import Message from "@/lib/messageSchema";
+
+export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
   try {

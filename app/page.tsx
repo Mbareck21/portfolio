@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
-import SlidingMessages from "@/components/SlidingMessages";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+
 const testimonials = [
   {
     quote:
