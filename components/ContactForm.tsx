@@ -74,7 +74,7 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative min-w-md flex flex-col gap-4 items-center w-[40rem] bg-transparent justify-center mx-auto my-20 h-fit p-4"
+      className="relative flex lg:w-[40rem] flex-col gap-4 items-center text-sm sm:w-full bg-transparent justify-center mx-auto my-20 h-fit p-4 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 rounded-2xl text-zinc-100 tracking-wide"
     >
       <label htmlFor="name" className="w-full flex flex-col gap-2">
         Name:
@@ -107,7 +107,7 @@ export default function ContactForm() {
       <label htmlFor="message" className="w-full flex flex-col gap-2">
         Message:
         <textarea
-          className="border border-neutral-500 rounded-md px-4 py-2 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          className="w-full border border-neutral-500 bg-transparent rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500  "
           id="message"
           placeholder="Enter your message"
           name="message"
@@ -120,8 +120,8 @@ export default function ContactForm() {
         )}
       </label>
 
-      <div className="flex justify-start w-full">
-        <button className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(17,33,51,0.9)] px-8 py-2 bg-[rgba(39,40,41,0.9)] rounded-md text-neutral-500 transition duration-200 ease-linear font-bold">
+      <div className="flex justify-center items-center w-full">
+        <button className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(17,33,51,0.9)] px-8 py-2 bg-[rgba(34,54,75,0.9)] rounded-md text-zinc-100 text-center transition duration-200 ease-linear font-bold w-40">
           Send
         </button>
       </div>

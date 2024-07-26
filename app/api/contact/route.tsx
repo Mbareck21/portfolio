@@ -3,10 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "@/lib/db";
 import Message from "@/lib/messageSchema";
 
-export async function runtime() {
-  return "edge";
-}
-
 export async function POST(req: NextRequest) {
   try {
     await connectToDatabase();
