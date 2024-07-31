@@ -1,6 +1,12 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { z } from "zod";
+
+const contactFormSchema = z.object({
+  name: z.string().min(3, { message: "Must be 3 or more characters long" }),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(5, { message: "Must be 5 or more characters long" }),
+});
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,65 +15,67 @@ export default function ContactForm() {
     message: "",
   });
 
-  const [errors, setErrors] = useState<{
-    name?: string;
-    email?: string;
-    message?: string;
-  }>({});
+  const [errors, setErrors] = useState<{ [key: string]: string | undefined }>(
+    {}
+  );
 
-  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+  function isStringArray(value: unknown): value is string[] {
+    return (
+      Array.isArray(value) && value.every((item) => typeof item === "string")
+    );
+  }
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value } = e.target;
+    const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+
+    const result = contactFormSchema.safeParse({ ...formData, [name]: value });
+    if (!result.success) {
+      const fieldErrors = result.error.formErrors.fieldErrors as {
+        [key: string]: string[] | undefined;
+      };
+
+      setErrors({
+        ...errors,
+        [name]: isStringArray(fieldErrors[name])
+          ? fieldErrors[name][0]
+          : undefined,
+      });
+    } else {
+      setErrors({ ...errors, [name]: undefined });
+    }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    // Basic validation (you can add more complex validation)
-    const newErrors: {
-      name?: string;
-      email?: string;
-      message?: string;
-    } = {};
-    if (!formData.name) {
-      newErrors.name = "Name is required";
-    }
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    }
-    if (!formData.message) {
-      newErrors.message = "Message is required";
-    }
-
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setShowSuccessMessage(false);
+    setShowErrorMessage(false);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        // Handle success (e.g., show a success message)
-        console.log("Message sent successfully!");
+        setShowSuccessMessage(true);
         setFormData({ name: "", email: "", message: "" });
-        router.push("/contact"); // Redirect to the same page to clear the form
       } else {
-        // Handle error (e.g., show an error message)
-        console.error("Error sending message");
+        setShowErrorMessage(true);
       }
     } catch (error) {
       console.error("Error sending message:", error);
+      setShowErrorMessage(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -120,9 +128,32 @@ export default function ContactForm() {
         )}
       </label>
 
-      <div className="flex justify-center items-center w-full">
-        <button className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(17,33,51,0.9)] px-8 py-2 bg-[rgba(34,54,75,0.9)] rounded-md text-zinc-100 text-center transition duration-200 ease-linear font-bold w-40">
-          Send
+      {Object.keys(errors).map(
+        (fieldName) =>
+          errors[fieldName] && (
+            <p key={fieldName} className="text-red-500 text-sm">
+              {errors[fieldName]}
+            </p>
+          )
+      )}
+
+      {showErrorMessage && (
+        <p className="text-red-500 text-sm">
+          There was an error sending your message. Please try again.
+        </p>
+      )}
+
+      {showSuccessMessage && (
+        <p className="text-green-500 text-sm">Thank you for your message!</p>
+      )}
+
+      <div className="flex justify-start w-full">
+        <button
+          type="submit"
+          className="shadow-[0_4px_14px_0_rgb(0,118,255,39%)] hover:shadow-[0_6px_20px_rgba(0,118,255,23%)] hover:bg-[rgba(17,33,51,0.9)] px-8 py-2 bg-[rgba(39,40,41,0.9)] rounded-md text-neutral-500 transition duration-200 ease-linear font-bold"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Sending..." : "Send"}
         </button>
       </div>
     </form>
