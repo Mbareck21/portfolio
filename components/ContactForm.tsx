@@ -1,6 +1,8 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { z } from "zod";
+
 
 const contactFormSchema = z.object({
   name: z.string().min(3, { message: "Must be 3 or more characters long" }),
@@ -20,9 +22,9 @@ export default function ContactForm() {
   );
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
-
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   function isStringArray(value: unknown): value is string[] {
     return (
       Array.isArray(value) && value.every((item) => typeof item === "string")
@@ -57,7 +59,28 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setShowSuccessMessage(false);
     setShowErrorMessage(false);
+    setSubmissionStatus("idle");
 
+    const validationResult = contactFormSchema.safeParse(formData);
+    if (!validationResult.success) {
+      const fieldErrors = validationResult.error.formErrors.fieldErrors as {
+        [key: string]: string[] | undefined;
+      };
+
+      const formattedErrors = Object.keys(fieldErrors).reduce(
+        (acc, fieldName) => {
+          const fieldError = fieldErrors[fieldName];
+          acc[fieldName] =
+            fieldError && fieldError.length > 0 ? fieldError[0] : undefined;
+          return acc;
+        },
+        {} as { [key: string]: string | undefined }
+      );
+
+      setErrors(formattedErrors);
+      setIsSubmitting(false);
+      return;
+    }
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -66,14 +89,14 @@ export default function ContactForm() {
       });
 
       if (response.ok) {
-        setShowSuccessMessage(true);
+        setSubmissionStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setShowErrorMessage(true);
+        setSubmissionStatus("error");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      setShowErrorMessage(true);
+      setSubmissionStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -128,23 +151,20 @@ export default function ContactForm() {
         )}
       </label>
 
-      {Object.keys(errors).map(
-        (fieldName) =>
-          errors[fieldName] && (
-            <p key={fieldName} className="text-red-500 text-sm">
-              {errors[fieldName]}
-            </p>
-          )
-      )}
-
-      {showErrorMessage && (
-        <p className="text-red-500 text-sm">
-          There was an error sending your message. Please try again.
-        </p>
-      )}
-
-      {showSuccessMessage && (
+      {submissionStatus === "success" && (
         <p className="text-green-500 text-sm">Thank you for your message!</p>
+      )}
+      {submissionStatus === "error" && (
+        <p className="text-red-500 text-sm">
+          Having issues with my Cloudflare deployment insisting on the edge
+          runtime... You can try this on Vercel:{" "}
+          <Link
+            href={"https://portfolio-drab-nine-66.vercel.app/contact"}
+            className="underline text-blue-500"
+          >
+            HERE
+          </Link>
+        </p>
       )}
 
       <div className="flex justify-start w-full">
