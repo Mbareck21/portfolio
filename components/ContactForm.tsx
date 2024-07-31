@@ -57,8 +57,6 @@ export default function ContactForm() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-    setShowSuccessMessage(false);
-    setShowErrorMessage(false);
     setSubmissionStatus("idle");
 
     const validationResult = contactFormSchema.safeParse(formData);

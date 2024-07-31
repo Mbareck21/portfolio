@@ -9,7 +9,7 @@ export default function Form() {
         <h1 className="text-zinc-100 font-bold tracking-wide mt-4 text-center">
           Send me a message!
         </h1>
-        <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed p-4 lg: w-[60%] md:w-full sm: w-full">
+        <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm max-w-lg text-pretty">
           This component allows for basic form submission and, and it sends
           visitor&apos;s name, email and message to{" "}
           <span className="text-sky-500">Mongodb</span>. I&apos;d then fetch the
