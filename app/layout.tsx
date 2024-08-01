@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+export const runtime = "experimental-edge";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
