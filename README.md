@@ -95,3 +95,4 @@ Feel free to reach out for any questions or suggestions!
 - Email: mlemine.mbareck@gmail.com 📧
 - GitHub: [@Mbareck21](https://github.com/Mbareck21) 🐙
 - Location: Fayetteville, AR 📍
+![image](https://github.com/user-attachments/assets/c1d97622-72f7-48dc-a666-a2961b214e30)
