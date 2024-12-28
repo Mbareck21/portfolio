@@ -73,7 +73,7 @@ npm start
 
 ## Deployment
 
-This site is deployed on Vercel and automatically updates when changes are pushed to the main branch. The live version can be accessed at [your-portfolio-url].
+This site is deployed on Vercel and automatically updates when changes are pushed to the main branch. The live version can be accessed at [your-portfolio-url](https://portfolio-drab-nine-66.vercel.app/)].
 
 ## Project Structure
 
@@ -94,6 +94,3 @@ For any inquiries or suggestions, please feel free to reach out:
 - GitHub: [@Mbareck21](https://github.com/Mbareck21)
 - Location: Fayetteville, AR
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
