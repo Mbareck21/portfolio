@@ -73,7 +73,7 @@ npm start
 
 ## Deployment
 
-This site is deployed on Vercel and automatically updates when changes are pushed to the main branch. The live version can be accessed at [your-portfolio-url](https://portfolio-drab-nine-66.vercel.app/)].
+This site is deployed on Vercel and automatically updates when changes are pushed to the main branch. The live version can be accessed at [Portfolio](https://portfolio-drab-nine-66.vercel.app/)].
 
 ## Project Structure
 
