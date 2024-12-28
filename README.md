@@ -82,10 +82,10 @@ The project follows a clean and modular structure:
 \`\`\`
 
 portfolio/
-├── app/              # Next.js app directory 📁
-├── components/       # Reusable React components 🧩
-├── public/          # Static assets 🖼️
-└── styles/          # Global styles and Tailwind configuration 🎨
+├── app/              
+├── components/      
+├── public/          
+└── styles/          
 
 \`\`\`
 
