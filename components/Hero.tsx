@@ -1,84 +1,112 @@
 "use client";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
-import lemineImage from "@/public/LEMINE.jpg";
-import richatOne from "@/public/richatImages/richatOne.jpg";
-import richatTwo from "@/public/richatImages/richatTwo.jpg";
-import richatThree from "@/public/richatImages/richatThree.jpg";
-import richatFour from "@/public/richatImages/richatFour.jpg";
-import Image from "next/image";
 
-const content = [
-  {
-    title: "About me",
-    description:
-      "My name is Mohamed Lemine, but you can call me Lemine. Seven years ago, I won a competitive scholarship from the U.S. government's Fulbright Student Exchange Program to pursue a master's degree in communication and media studies. For my thesis project, I dove into sentiment analysis, using R to scrape data from Twitter and applying various machine learning techniques. This experience ignited a passion for using technology to solve problems, and I'm eager to transition into a software development career.I was born and raised in Nouakchott, the vibrant capital of Mauritania, a land of mesmerizing deserts and rich nomadic traditions. But it&apos;s the Richat Structure, the &quot;Eye of the Sahara,&quot; that always held a special allure for me. This geological enigma, visible from space, sparked my childhood curiosity and instilled in me a deep appreciation for the wonders of the natural world. It&apos;s fitting, then, that my journey into programming began much like the Richat Structure—with a question, a mystery to be solved, and a drive to uncover the underlying patterns and connections. I see code as a tool to unlock new possibilities and create meaningful solutions, just as the Richat Structure has captivated explorers and scientists for generations. As I embark on this exciting new chapter as a software developer, I carry with me the spirit of curiosity and problem-solving that my homeland instilled in me.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center">
-        <Image
-          src={lemineImage}
-          className="h-full w-full object-cover"
-          alt="Lemine's Image"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "The Richat Structure",
-    description:
-      "This structure is a deeply eroded, slightly elliptical, 40 km in diameter, dome. The sedimentary rock exposed in this dome range in age from Late Proterozoic within the center of the dome to Ordovician sandstone around its edges. Exposed within the interior of the Richat Structure are a variety of intrusive and extrusive igneous rocks. Spectacular hydrothermal features are a part of the Richat Structure.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center">
-        <Image
-          src={richatOne}
-          className="h-full w-full object-cover"
-          alt="Richat Structure's Image-1"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "A Cool Fact About it",
-    description:
-      "In a viral video that racked up over half a million views in just two days, YouTube blogger Jimmy Bright argues that the Richat Structure, a geological dome in northwest Sahara also referred to as the Eye of the Sahara, is the most likely location of Atlantis.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src={richatTwo}
-          className="h-full w-full object-cover"
-          alt="Richat Structure's Image-2"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "Another Cool Fact",
-    description:
-      "The Richat Structure&apos;s true colors are actually a mix of earth tones, not the vibrant blues often seen in satellite images. The blue hues in many photos are artificially added to highlight the different rock types and geological features. In reality, the structure&apos;s rings are composed of various shades of brown, beige, and gray rock.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src={richatThree}
-          className="h-full w-full object-cover"
-          alt="Richat Structure's Image"
-        />
-      </div>
-    ),
-  },
-  {
-    title: "The Eye Shape",
-    description:
-      "Its bullseye-like appearance, with concentric rings and a diameter spanning nearly 30 miles, has earned it the nickname &quot;The Eye of the Sahara.&quot; For centuries, the Richat Structure remained a mystery. Once thought to be the result of a meteorite impact, scientists now believe it&apos;s a result of uplifted rock that has been eroded over time, revealing the different layers and colors of the sedimentary rock beneath. Its unique appearance has captivated scientists, explorers, and space travelers alike, as it&apos;s a truly remarkable sight from space.",
-    content: (
-      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
-        <Image
-          src={richatFour}
-          className="h-full w-full object-cover"
-          alt="Richat Structure's Image"
-        />
-      </div>
-    ),
-  },
-];
-export default function Hero() {
-  return <StickyScroll content={content} />;
+import { motion } from "framer-motion";
+import { BackgroundBeams } from "./ui/background-beams";
+import Image from "next/image";
+import { MapPinIcon } from "@heroicons/react/24/outline";
+
+export function Hero() {
+  return (
+    <div className="min-h-screen w-full bg-neutral-950 relative flex flex-col items-center justify-center overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="max-w-7xl mx-auto px-6 py-20 relative z-10"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mb-12"
+            >              
+              <h1 className="text-4xl lg:text-6xl font-bold text-neutral-100">
+                Mohamed Lemine
+                <span className="text-violet-500 block mt-2">Mbareck</span>
+              </h1>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex items-center text-neutral-400 mb-6"
+            >
+              <MapPinIcon className="h-5 w-5 mr-2 text-violet-500" />
+              <span>Fayetteville, AR</span>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="space-y-6"
+            >
+              <p className="text-neutral-300 text-lg leading-relaxed">
+                A full-stack developer with a unique background in data analysis and media studies. As a Fulbright scholar, 
+                I combine analytical thinking with creative problem-solving to build elegant, user-focused web solutions.
+              </p>
+              
+              <p className="text-neutral-300 text-lg leading-relaxed">
+                Drawing from my experience in media research and sentiment analysis, I bring a distinctive perspective to software development. 
+                My journey from analyzing data patterns to crafting intuitive web applications has equipped me with a holistic understanding 
+                of both user needs and technical implementation.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="mt-8 flex gap-4"
+            >
+              <a
+                href="#projects"
+                className="bg-violet-500 hover:bg-violet-600 text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium"
+              >
+                View Projects
+              </a>
+              <a
+                href="#contact"
+                className="border border-violet-500/30 hover:border-violet-500 text-neutral-300 hover:text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium"
+              >
+                Contact Me
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+          >
+            <div className="relative w-72 h-72 lg:w-96 lg:h-96">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.2 }}
+                transition={{ delay: 0.5 }}
+                className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-500 rounded-3xl rotate-6"
+              />
+              <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Lemine Mbareck"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 288px, 384px"
+                  priority
+                  quality={95}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+      
+      <BackgroundBeams />
+    </div>
+  );
 }
