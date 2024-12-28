@@ -1,5 +1,3 @@
-Okay, here's a more engaging and visually appealing README with emojis and some formatting improvements, designed to be more interesting for a fellow SWE:
-
 # 🚀 Modern Portfolio Website - Mohamed Lemine Mbareck 👨‍💻
 
 Welcome! This repository hosts my personal portfolio website, a place where I showcase my journey from diving into data analysis to building full-stack applications. Crafted with modern web technologies, this site is not just a portfolio, but a demonstration of my technical skills and professional experience.
@@ -82,11 +80,13 @@ This site is deployed on Vercel and automatically updates when changes are pushe
 The project follows a clean and modular structure:
 
 \`\`\`
+
 portfolio/
 ├── app/              # Next.js app directory 📁
 ├── components/       # Reusable React components 🧩
 ├── public/          # Static assets 🖼️
 └── styles/          # Global styles and Tailwind configuration 🎨
+
 \`\`\`
 
 ## 📧 Contact
