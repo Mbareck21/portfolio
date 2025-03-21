@@ -17,6 +17,8 @@ const skills = {
     "Tailwind CSS",
     "JavaScript",
     "HTML5/CSS3",
+    "Python",
+    "Bootstrap",
   ],
   backend: [
     "Node.js", 
@@ -28,19 +30,24 @@ const skills = {
   ],
   dataAnalysis: [
     "R Programming",
+    "Tableau",
     "Data Visualization",
-    "Statistical Analysis",
     "Text Mining",
     "Sentiment Analysis",
     "Data Cleaning"
   ],
   software: [
+    
+    "MS Windows",
+    'MacOS',
+    'Troubleshooting',
+    'Software installation',
     "Microsoft Office Suite",
     "Google Workspace",
     "VS Code",
     "Git/GitHub",
-    "Postman",
-    "Tableau"
+    '...And more!'
+    
   ]
 };
 
@@ -55,10 +62,10 @@ export function Skills() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-4">
-            Technical Skills
+            Programming Skills
           </h2>
           <p className="text-neutral-400 max-w-2xl mb-12 text-lg">
-            My comprehensive skill set spans web development and data analysis, allowing me to build
+            My comprehensive programming skill set spans web development and data analysis, allowing me to build
             robust applications while leveraging data-driven insights.
           </p>
         </motion.div>
@@ -83,7 +90,7 @@ export function Skills() {
             delay={0.4}
           />
           <SkillCategory
-            title="Software & Tools"
+            title="IT & Tools"
             skills={skills.software}
             icon={CubeIcon}
             delay={0.6}

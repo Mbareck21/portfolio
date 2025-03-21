@@ -45,12 +45,12 @@ export function Hero() {
               className="space-y-6"
             >
               <p className="text-neutral-300 text-lg leading-relaxed">
-                A full-stack developer with a unique background in data analysis and media studies. As a Fulbright scholar, 
-                I combine analytical thinking with creative problem-solving to build elegant, user-focused web solutions.
+              I am a passionate and enthusiastic developer, with a strong background in software development and a 
+keen interest in emerging technologies.
               </p>
               
               <p className="text-neutral-300 text-lg leading-relaxed">
-                Drawing from my experience in media research and sentiment analysis, I bring a distinctive perspective to software development. 
+                Drawing from my experience in research and sentiment analysis, I bring a distinctive perspective to software development. 
                 My journey from analyzing data patterns to crafting intuitive web applications has equipped me with a holistic understanding 
                 of both user needs and technical implementation.
               </p>

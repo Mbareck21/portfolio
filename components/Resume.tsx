@@ -25,9 +25,7 @@ export function Resume() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Left Column - Experience & Education */}
           <div className="lg:col-span-8 space-y-8">
-            {/* Experience Section */}
             <div className="bg-neutral-900/50 rounded-2xl p-8 backdrop-blur-sm border border-neutral-800">
               <div className="flex items-center mb-6">
                 <BriefcaseIcon className="h-6 w-6 text-primary-500 mr-3" />
@@ -38,7 +36,7 @@ export function Resume() {
                 <ExperienceItem
                   title="Immigration Program Manager"
                   company="Canopy NWA"
-                  period="2020-Present"
+                  period="2021-Present"
                   location="Fayetteville, AR"
                   description="Developed and launched a full-stack Immigration Case Management App using Next.js 13, Material UI, and MongoDB. Implemented NextAuth for secure authentication and CRUD operations."
                 />
@@ -53,7 +51,6 @@ export function Resume() {
               </div>
             </div>
 
-            {/* Education Section */}
             <div className="bg-neutral-900/50 rounded-2xl p-8 backdrop-blur-sm border border-neutral-800">
               <div className="flex items-center mb-6">
                 <AcademicCapIcon className="h-6 w-6 text-primary-500 mr-3" />
@@ -61,6 +58,12 @@ export function Resume() {
               </div>
               
               <div className="space-y-8">
+                <EducationItem
+                  title="Front-End Web Development Certificate"
+                  institution="University of Arkansas"
+                  period="April 2023 - November 2023"
+                  description="A comprehensive certification program that, preparing students in front-end web development. The program covers HTML, CSS, JavaScript, React, and UI design principles. Students learn to create responsive and user-friendly web applications using modern front-end technologies."  
+                />
                 <EducationItem
                   title="Meta Front-End Developer Professional Certificate"
                   institution="Coursera"

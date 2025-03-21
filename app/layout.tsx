@@ -14,6 +14,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navigation />
         {children}
+        <footer className="bg-neutral-950 text-neutral-400 text-center py-4">
+          <div className="max-w-7xl mx-auto px-6">
+            &copy; {new Date().getFullYear()} Lemine Mbareck. All rights reserved.
+          </div>
+        </footer>
       </body>
     </html>
   );

@@ -62,7 +62,7 @@ export function Projects() {
           <p className="text-neutral-400 max-w-2xl mb-12 text-lg">
             Explore my latest work on GitHub, showcasing expertise in modern web development.
             Each project demonstrates my commitment to clean code, innovative solutions, and
-            industry best practices.
+            industry best practices. This section is dynamically generated from my public repositories on GitHub.
           </p>
         </motion.div>
 
