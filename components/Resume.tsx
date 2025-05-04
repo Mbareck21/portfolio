@@ -39,7 +39,15 @@ export function Resume() {
 									company='Canopy NWA'
 									period='2021-Present'
 									location='Fayetteville, AR'
-									description='Developed and launched a full-stack Immigration Case Management App using Next.js 13, Material UI, and MongoDB. Implemented NextAuth for secure authentication and CRUD operations.'
+									description='Managed a high-volume portfolio of over 500 cases annually, implementing organizational processes to ensure efficient service delivery and data management for each case. 
+
+Developed and implemented efficient case tracking and management processes, significantly improving operational effectiveness and data integrity, directly relevant to data quality management and process optimization. 
+
+Led rapid response projects, coordinating complex logistics and resources under pressure to assist large groups, demonstrating strong project management and problem-solving skills applicable to supply chain coordination and issue resolution. 
+
+Established and maintained collaborative partnerships with various external organizations, fostering communication and streamlining workflows to enhance service delivery, mirroring the need to collaborate with suppliers and cross-functional partners. 
+
+Provided crisis support and quick solutions for urgent client needs, showcasing adaptability and the ability to troubleshoot and resolve issues efficiently. Supervised and mentored staff and interns, delegating tasks and ensuring performance to meet program goals, reflecting leadership and team coordination abilities. '
 								/>
 
 								<ExperienceItem
@@ -54,7 +62,11 @@ export function Resume() {
 									company='Cabinet Présidentiel'
 									period='Jan 2011 – Jan 2018'
 									location='NKC, Mauritania'
-									description='Managed media relations, press releases, and public statements for the Presidential Cabinet. Developed and implemented communication strategies to enhance public perception.'
+									description='Collaborated with senior leadership on planning and executing official communication strategies, contributing to public image and information dissemination efforts. 
+
+Managed media relations and public information flow, ensuring accurate and timely communication to diverse stakeholders, relevant to external communication and data transparency. 
+
+Monitored media coverage and public sentiment, providing insights for strategic communication adjustments, similar to monitoring customer feedback and industry trends. '
 								/>
 							</div>
 						</div>
@@ -145,7 +157,6 @@ export function Resume() {
 							</div>
 						</div>
 
-						{/* Certifications Section */}
 						<div className='bg-neutral-900/50 rounded-2xl p-8 backdrop-blur-sm border border-neutral-800'>
 							<div className='flex items-center mb-6'>
 								<BeakerIcon className='h-6 w-6 text-primary-500 mr-3' />
@@ -157,9 +168,11 @@ export function Resume() {
 							<div className='space-y-4'>
 								<div className='border-l-2 border-primary-500 pl-4'>
 									<h4 className='text-neutral-100 font-semibold'>
-										Meta Front-End Developer
+										Front-End Developer
 									</h4>
-									<p className='text-neutral-400 text-sm'>Coursera - 2023</p>
+									<p className='text-neutral-400 text-sm'>
+										University of Arkansas - 2023
+									</p>
 								</div>
 								<div className='border-l-2 border-primary-500 pl-4'>
 									<h4 className='text-neutral-100 font-semibold'>
