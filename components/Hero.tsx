@@ -21,13 +21,13 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="mb-12"
-            >              
+            >
               <h1 className="text-4xl lg:text-6xl font-bold text-neutral-100">
                 Mohamed Lemine
                 <span className="text-violet-500 block mt-2">Mbareck</span>
               </h1>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -45,14 +45,17 @@ export function Hero() {
               className="space-y-6"
             >
               <p className="text-neutral-300 text-lg leading-relaxed">
-              I am a passionate and enthusiastic developer, with a strong background in software development and a 
-keen interest in emerging technologies.
+                I am a passionate and enthusiastic developer, with a strong
+                background in software development and a keen interest in
+                emerging technologies.
               </p>
-              
+
               <p className="text-neutral-300 text-lg leading-relaxed">
-                Drawing from my experience in research and sentiment analysis, I bring a distinctive perspective to software development. 
-                My journey from analyzing data patterns to crafting intuitive web applications has equipped me with a holistic understanding 
-                of both user needs and technical implementation.
+                Drawing from my experience in research and sentiment analysis, I
+                bring a distinctive perspective to software development. My
+                journey from analyzing data patterns to crafting intuitive web
+                applications has equipped me with a holistic understanding of
+                both user needs and technical implementation.
               </p>
             </motion.div>
 
@@ -105,7 +108,7 @@ keen interest in emerging technologies.
           </motion.div>
         </div>
       </motion.div>
-      
+
       <BackgroundBeams />
     </div>
   );
