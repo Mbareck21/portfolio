@@ -168,6 +168,12 @@ Monitored media coverage and public sentiment, providing insights for strategic 
 							<div className='space-y-4'>
 								<div className='border-l-2 border-primary-500 pl-4'>
 									<h4 className='text-neutral-100 font-semibold'>
+										Foundation of Generative AI
+									</h4>
+									<p className='text-neutral-400 text-sm'>Udacity - 2025</p>
+								</div>
+								<div className='border-l-2 border-primary-500 pl-4'>
+									<h4 className='text-neutral-100 font-semibold'>
 										Front-End Developer
 									</h4>
 									<p className='text-neutral-400 text-sm'>
