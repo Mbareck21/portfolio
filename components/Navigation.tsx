@@ -1,155 +1,132 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Bars3Icon as MenuIcon, XMarkIcon as XIcon } from "@heroicons/react/24/outline";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navigationItems = [
   { name: "Home", href: "#home" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Resume", href: "#resume" },
-  { name: "Contact", href: "#contact" }
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
       const sections = document.querySelectorAll(".section");
       const scrollPosition = window.scrollY + 100;
 
       sections.forEach((section) => {
-        const sectionId = section.id;
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        const sectionTop =
+          section.getBoundingClientRect().top + window.scrollY;
         const sectionBottom = sectionTop + section.clientHeight;
 
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          setActiveSection(sectionId);
+          setActiveSection(section.id);
         }
       });
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const targetId = href.replace("#", "");
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+    const element = document.getElementById(href.replace("#", ""));
+    if (element) {
+      const offsetPosition =
+        element.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    scrollToSection(href);
-  };
-
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "py-4 bg-neutral-950/80 backdrop-blur-lg" : "py-6 bg-transparent"
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <motion.a
+    <header className="fixed top-0 w-full z-50 bg-paper/90 backdrop-blur border-b border-ink/10">
+      <nav className="mx-auto max-w-6xl px-6">
+        <div className="flex h-16 items-center justify-between">
+          <a
             href="#home"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="bg-violet-500 px-4 py-2 rounded-xl shadow-lg hover:scale-105 transition-transform"
             onClick={(e) => handleNavClick(e, "#home")}
+            className="font-mono text-sm font-medium tracking-[0.2em] hover:text-pine transition-colors"
           >
-            <span className="text-xl font-bold text-white">LM</span>
-          </motion.a>
+            LEMINE MBARECK
+          </a>
 
-          {/* Desktop Navigation */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="hidden md:flex space-x-8"
-          >
+          <div className="hidden md:flex items-center gap-8">
             {navigationItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`relative py-2 text-sm font-medium transition-colors ${
+                className={`font-mono text-xs uppercase tracking-widest transition-colors ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-violet-500"
-                    : "text-neutral-400 hover:text-violet-500"
+                    ? "text-pine underline underline-offset-8 decoration-1"
+                    : "text-ink/60 hover:text-pine"
                 }`}
               >
                 {item.name}
-                {activeSection === item.href.replace("#", "") && (
-                  <motion.div
-                    layoutId="activeSection"
-                    className="absolute -bottom-px left-0 right-0 h-px bg-violet-500"
-                  />
-                )}
               </a>
             ))}
-          </motion.div>
+            <ThemeToggle />
+            <a
+              href="/Lemine-Mbareck-Resume.pdf"
+              download
+              className="font-mono text-xs uppercase tracking-widest border border-ink px-3.5 py-2 hover:bg-ink hover:text-paper transition-colors"
+            >
+              Resume
+            </a>
+          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-neutral-400 hover:text-violet-500"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMobileMenuOpen ? (
-              <XIcon className="h-6 w-6" />
-            ) : (
-              <MenuIcon className="h-6 w-6" />
-            )}
-          </button>
+          <div className="md:hidden flex items-center gap-6">
+            <ThemeToggle />
+            <button
+              className="font-mono text-xs uppercase tracking-widest text-ink/70 hover:text-pine"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? "Close" : "Menu"}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 p-4 bg-neutral-950/95 backdrop-blur-lg md:hidden"
-            >
-              <div className="flex flex-col space-y-4">
-                {navigationItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
-                    className={`py-2 text-sm font-medium transition-colors ${
-                      activeSection === item.href.replace("#", "")
-                        ? "text-violet-500"
-                        : "text-neutral-400 hover:text-violet-500"
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-ink/10 py-4 bg-paper">
+            <div className="flex flex-col gap-4">
+              {navigationItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`font-mono text-xs uppercase tracking-widest ${
+                    activeSection === item.href.replace("#", "")
+                      ? "text-pine"
+                      : "text-ink/60"
+                  }`}
+                >
+                  {item.name}
+                </a>
+              ))}
+              <a
+                href="/Lemine-Mbareck-Resume.pdf"
+                download
+                className="font-mono text-xs uppercase tracking-widest text-ink"
+              >
+                Download resume (PDF) &#8595;
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

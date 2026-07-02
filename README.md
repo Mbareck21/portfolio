@@ -1,98 +1,46 @@
-# 🚀 Modern Portfolio Website - Mohamed Lemine Mbareck 👨‍💻
+# Lemine Mbareck - Portfolio
 
-Welcome! This repository hosts my personal portfolio website, a place where I showcase my journey from diving into data analysis to building full-stack applications. Crafted with modern web technologies, this site is not just a portfolio, but a demonstration of my technical skills and professional experience.
+Personal portfolio site for Lemine Mbareck, data engineer and people leader. The site covers my data engineering work (Snowflake, SQL, Python, Power BI, agentic AI), featured projects with live demos, work history, education, and certifications.
 
-## 🎯 Project Overview
+Live site: [portfolio-drab-nine-66.vercel.app](https://portfolio-drab-nine-66.vercel.app/)
 
-This portfolio website is designed to provide an in-depth look at my skills, experiences, and projects. You'll find a clean, professional design, smooth animations, and a responsive layout that ensures an optimal experience whether you're on a phone or a desktop.
+## Stack
 
-## 🛠️ Technology Stack
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- No UI or animation libraries; typography does the work (Fraunces, IBM Plex Sans, IBM Plex Mono)
 
-This project is powered by these technologies:
+## Structure
 
-- **Framework:** Next.js 14 ⚛️
-- **Styling:** Tailwind CSS with custom animations 🎨
-- **UI Components:** Custom React components with Framer Motion animations ✨
-- **State Management:** React Hooks 🪝
-- **Version Control:** Git 🌿
-- **Deployment:** Vercel ☁️
-
-## ✨ Key Features
-
-### 🗂️ Dynamic Project Showcase
-The website automatically fetches and displays my GitHub repositories, so you always see my latest work. Each project is detailed with the technologies I used and its purpose.
-
-### 📱 Responsive Design
-The site adapts seamlessly to any screen size, from mobile devices 📱 to large desktop displays 🖥️. This ensures a consistent user experience for everyone.
-
-### 🖱️ Interactive Elements
-I've included some engaging UI elements to make the site more interesting:
-- Smooth scroll navigation 📜
-- Animated transitions between sections ➡️
-- Interactive project cards 🎴
-- Dynamic content loading ⏳
-
-### ⚡ Performance Optimized
-The website is built for speed and performance:
-- Image optimization 🖼️
-- Code splitting ✂️
-- Lazy loading 😴
-- SEO best practices 🔍
-
-## ⚙️ Local Development
-
-To get this project running locally:
-
-\`\`\`bash
-# Clone the repository
-git clone https://github.com/Mbareck21/portfolio.git
-
-# Navigate to the project directory
-cd portfolio
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-\`\`\`
-
-The site will then be accessible at \`http://localhost:3000\` 🎉
-
-## 🏗️ Building for Production
-
-Ready to go live? Here's how to build for production:
-
-\`\`\`bash
-# Create an optimized production build
-npm run build
-
-# Start the production server
-npm start
-\`\`\`
-
-## 🚀 Deployment
-
-This site is deployed on Vercel and automatically updates when changes are pushed to the main branch. Check out the live version here: [Portfolio](https://portfolio-drab-nine-66.vercel.app/) 🌐
-
-## 📁 Project Structure
-
-The project follows a clean and modular structure:
-
-\`\`\`
-
+```
 portfolio/
-├── app/              
-├── components/      
-├── public/          
-└── styles/          
+├── app/            Layout, page, global styles, favicon
+├── components/     Section components (Hero, Skills, Projects, Experience, Contact, Navigation)
+└── public/         Profile image and resume PDF
+```
 
-\`\`\`
+## Local development
 
-## 📧 Contact
+```bash
+npm install
+npm run dev
+```
 
-Feel free to reach out for any questions or suggestions!
-- Email: mlemine.mbareck@gmail.com 📧
-- GitHub: [@Mbareck21](https://github.com/Mbareck21) 🐙
-- Location: Fayetteville, AR 📍
-![image](https://github.com/user-attachments/assets/c1d97622-72f7-48dc-a666-a2961b214e30)
+The site runs at http://localhost:3000.
+
+## Production build
+
+```bash
+npm run build
+npm start
+```
+
+## Deployment
+
+Deployed on Vercel. Pushes to the main branch deploy automatically.
+
+## Contact
+
+- GitHub: [@Mbareck21](https://github.com/Mbareck21)
+- LinkedIn: [lemine-mbareck](https://linkedin.com/in/lemine-mbareck)

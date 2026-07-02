@@ -1,115 +1,109 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { BackgroundBeams } from "./ui/background-beams";
 import Image from "next/image";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+
+const stack = ["Snowflake", "SQL", "Python", "Power BI", "Agentic AI"];
+const tickerItems: string[] = Array(3).fill(stack).flat();
 
 export function Hero() {
   return (
-    <div className="min-h-screen w-full bg-neutral-950 relative flex flex-col items-center justify-center overflow-hidden">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="max-w-7xl mx-auto px-6 py-20 relative z-10"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mb-12"
-            >
-              <h1 className="text-4xl lg:text-6xl font-bold text-neutral-100">
-                Mohamed Lemine
-                <span className="text-violet-500 block mt-2">Mbareck</span>
-              </h1>
-            </motion.div>
+    <section id="home" className="section pt-28 pb-16">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="border-y border-ink/15 flex items-stretch">
+          <span className="flex shrink-0 items-center border-r border-ink/15 py-4 pr-6 font-mono text-xs uppercase tracking-widest text-ink/50">
+            Core stack
+          </span>
+          <p className="sr-only">
+            Core stack: Snowflake, SQL, Python, Power BI, Agentic AI.
+          </p>
+          <div className="flex-1 overflow-hidden" aria-hidden="true">
+            <div className="flex w-max animate-ticker py-4 hover:[animation-play-state:paused]">
+              {[0, 1].map((half) => (
+                <ul key={half} className="flex shrink-0">
+                  {tickerItems.map((item, i) => (
+                    <li
+                      key={`${half}-${i}`}
+                      className="flex items-center font-mono text-sm uppercase tracking-wider text-ink/80"
+                    >
+                      <span className="px-6">{item}</span>
+                      <span className="text-pine">&middot;</span>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+          </div>
+        </div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex items-center text-neutral-400 mb-6"
-            >
-              <MapPinIcon className="h-5 w-5 mr-2 text-violet-500" />
-              <span>Fayetteville, AR</span>
-            </motion.div>
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-8">
+            <p className="font-mono text-sm uppercase tracking-[0.25em] text-pine">
+              Data Engineer &amp; People Leader
+            </p>
+            <h1 className="font-display text-6xl md:text-7xl xl:text-8xl leading-[0.95] tracking-tight mt-5">
+              Lemine Mbareck
+            </h1>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="space-y-6"
-            >
-              <p className="text-neutral-300 text-lg leading-relaxed">
-                I am a passionate and enthusiastic developer, with a strong
-                background in software development and a keen interest in
-                emerging technologies.
-              </p>
+            <p className="mt-10 text-xl leading-relaxed text-ink/80 max-w-2xl">
+              I build enterprise data pipelines and reporting at the Walton
+              Arts Center and Walmart AMP, working across Snowflake, SQL
+              Server, and PostgreSQL with Python and Power BI. Before moving
+              into data engineering, I spent five years supervising teams and
+              running KPI-driven, federally audited programs.
+            </p>
+            <p className="mt-5 text-xl leading-relaxed text-ink/80 max-w-2xl">
+              I built and led a legal services program that served over 1,000
+              clients with a near-perfect approval rate across hundreds of
+              federal applications, work recognized with the 2024 Arkansas
+              Access to Justice Award. I bring that same discipline for
+              accuracy, process, and compliance to data work.
+            </p>
 
-              <p className="text-neutral-300 text-lg leading-relaxed">
-                Drawing from my experience in research and sentiment analysis, I
-                bring a distinctive perspective to software development. My
-                journey from analyzing data patterns to crafting intuitive web
-                applications has equipped me with a holistic understanding of
-                both user needs and technical implementation.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-              className="mt-8 flex gap-4"
-            >
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <a
                 href="#projects"
-                className="bg-violet-500 hover:bg-violet-600 text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium"
+                className="bg-pine text-paper px-7 py-3.5 font-medium hover:bg-pine-deep transition-colors"
               >
-                View Projects
+                View projects
               </a>
               <a
-                href="#contact"
-                className="border border-violet-500/30 hover:border-violet-500 text-neutral-300 hover:text-white px-8 py-4 rounded-lg transition-colors duration-200 font-medium"
+                href="/Lemine-Mbareck-Resume.pdf"
+                download
+                className="font-mono text-sm underline underline-offset-4 decoration-1 hover:text-pine transition-colors"
               >
-                Contact Me
+                Download resume (PDF) &#8595;
               </a>
-            </motion.div>
+              <a
+                href="https://linkedin.com/in/lemine-mbareck"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-sm underline underline-offset-4 decoration-1 hover:text-pine transition-colors"
+              >
+                LinkedIn &#8599;
+              </a>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
-          >
-            <div className="relative w-72 h-72 lg:w-96 lg:h-96">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.2 }}
-                transition={{ delay: 0.5 }}
-                className="absolute inset-0 bg-gradient-to-br from-violet-500 to-purple-500 rounded-3xl rotate-6"
-              />
-              <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden">
+          <div className="lg:col-span-4">
+            <figure>
+              <div className="relative aspect-[4/5] border border-ink/15">
                 <Image
                   src="/images/profile.jpg"
                   alt="Lemine Mbareck"
                   fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 288px, 384px"
+                  className="object-cover object-center grayscale hover:grayscale-0 transition duration-700"
+                  sizes="(max-width: 1024px) 100vw, 360px"
                   priority
-                  quality={95}
+                  quality={90}
                 />
               </div>
-            </div>
-          </motion.div>
+              <figcaption className="mt-3 flex justify-between font-mono text-xs text-ink/50">
+                <span>Fayetteville, Arkansas</span>
+                <span>2026</span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
-      </motion.div>
 
-      <BackgroundBeams />
-    </div>
+      </div>
+    </section>
   );
 }
