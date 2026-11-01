@@ -22,13 +22,13 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-drab-nine-66.vercel.app"),
-  title: "Lemine Mbareck | Data Engineer",
+  title: "Lemine Mbareck | Data Engineer & Full-Stack Developer",
   description:
-    "Data engineer and people leader building enterprise data pipelines and reporting with Snowflake, SQL, Python, Power BI, and agentic AI. Based in Fayetteville, AR.",
+    "Data engineer and full-stack developer in Fayetteville, AR. I build data pipelines with Snowflake, SQL, Python, and Power BI, and ship web apps with TypeScript, React, Next.js, and MongoDB.",
   openGraph: {
-    title: "Lemine Mbareck | Data Engineer",
+    title: "Lemine Mbareck | Data Engineer & Full-Stack Developer",
     description:
-      "Data engineer and people leader building enterprise data pipelines and reporting with Snowflake, SQL, Python, Power BI, and agentic AI.",
+      "Data engineer and full-stack developer building data pipelines with Snowflake, SQL, and Python, and web apps with TypeScript, React, Next.js, and MongoDB.",
     url: "/",
     siteName: "Lemine Mbareck",
     images: ["/images/profile.jpg"],

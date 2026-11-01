@@ -91,7 +91,7 @@ const certifications = [
     detail: "U.S. DOJ, 2022 - Present",
   },
   {
-    name: "Foundations of Generative AI",
+    name: "Foundations of Generative AI Nanodegree",
     detail: "Udacity, 2025",
   },
   {
@@ -103,7 +103,7 @@ const certifications = [
     detail: "University of Arkansas, 2023",
   },
   {
-    name: "Full-Stack Web Development",
+    name: "Full-Stack Web Development Bootcamp",
     detail: "Code The Dream, 2022",
   },
 ];

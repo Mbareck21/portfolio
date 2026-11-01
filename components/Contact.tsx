@@ -16,8 +16,8 @@ export function Contact() {
         <SectionHeader index="04" title="Contact" />
 
         <p className="font-display text-3xl md:text-5xl leading-tight tracking-tight max-w-3xl">
-          Open to advanced data engineering and analytics roles. The fastest
-          way to reach me is LinkedIn.
+          Open to data engineering, analytics, and software engineering roles.
+          The fastest way to reach me is LinkedIn.
         </p>
 
         <a

@@ -1,6 +1,6 @@
 # Lemine Mbareck - Portfolio
 
-Personal portfolio site for Lemine Mbareck, data engineer and people leader. The site covers my data engineering work (Snowflake, SQL, Python, Power BI, agentic AI), featured projects with live demos, work history, education, and certifications.
+Personal portfolio site for Lemine Mbareck, data engineer and full-stack developer. The site covers my data engineering work (Snowflake, SQL, Python, Power BI, agentic AI), my full-stack apps (TypeScript, React, Next.js, MongoDB), featured projects with live demos, work history, education, and certifications.
 
 Live site: [portfolio-drab-nine-66.vercel.app](https://portfolio-drab-nine-66.vercel.app/)
 
@@ -17,7 +17,7 @@ Live site: [portfolio-drab-nine-66.vercel.app](https://portfolio-drab-nine-66.ve
 portfolio/
 ├── app/            Layout, page, global styles, favicon
 ├── components/     Section components (Hero, Skills, Projects, Experience, Contact, Navigation)
-└── public/         Profile image and resume PDF
+└── public/         Profile image and resume PDFs (software and data)
 ```
 
 ## Local development

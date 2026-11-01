@@ -1,6 +1,16 @@
 import Image from "next/image";
 
-const stack = ["Snowflake", "SQL", "Python", "Power BI", "Agentic AI"];
+const stack = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "MongoDB",
+  "Snowflake",
+  "SQL",
+  "Python",
+  "Power BI",
+  "Agentic AI",
+];
 const tickerItems: string[] = Array(3).fill(stack).flat();
 
 export function Hero() {
@@ -12,7 +22,8 @@ export function Hero() {
             Core stack
           </span>
           <p className="sr-only">
-            Core stack: Snowflake, SQL, Python, Power BI, Agentic AI.
+            Core stack: TypeScript, React, Next.js, MongoDB, Snowflake, SQL,
+            Python, Power BI, Agentic AI.
           </p>
           <div className="flex-1 overflow-hidden" aria-hidden="true">
             <div className="flex w-max animate-ticker py-4 hover:[animation-play-state:paused]">
@@ -36,7 +47,7 @@ export function Hero() {
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-8">
             <p className="font-mono text-sm uppercase tracking-[0.25em] text-pine">
-              Data Engineer &amp; People Leader
+              Data Engineer &amp; Full-Stack Developer
             </p>
             <h1 className="font-display text-6xl md:text-7xl xl:text-8xl leading-[0.95] tracking-tight mt-5">
               Lemine Mbareck
@@ -45,16 +56,27 @@ export function Hero() {
             <p className="mt-10 text-xl leading-relaxed text-ink/80 max-w-2xl">
               I build enterprise data pipelines and reporting at the Walton
               Arts Center and Walmart AMP, working across Snowflake, SQL
-              Server, and PostgreSQL with Python and Power BI. Before moving
-              into data engineering, I spent five years supervising teams and
-              running KPI-driven, federally audited programs.
+              Server, and PostgreSQL with Python and Power BI. I also design
+              and ship full-stack web apps with TypeScript, React, Next.js, and
+              MongoDB. CD Freight, a relay freight marketplace I built, is live
+              at{" "}
+              <a
+                href="https://cdfreight.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 decoration-1 hover:text-pine transition-colors"
+              >
+                cdfreight.com
+              </a>
+              .
             </p>
             <p className="mt-5 text-xl leading-relaxed text-ink/80 max-w-2xl">
-              I built and led a legal services program that served over 1,000
-              clients with a near-perfect approval rate across hundreds of
-              federal applications, work recognized with the 2024 Arkansas
-              Access to Justice Award. I bring that same discipline for
-              accuracy, process, and compliance to data work.
+              Before that, I spent five years supervising teams and running
+              federally audited programs. I built and led a legal services
+              program that served over 1,000 clients with a near-perfect
+              approval rate, work recognized with the 2024 Arkansas Access to
+              Justice Award. I bring the same care for accuracy and process to
+              data and software work.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
@@ -65,11 +87,18 @@ export function Hero() {
                 View projects
               </a>
               <a
+                href="/Lemine-Mbareck-Resume-Software.pdf"
+                download
+                className="font-mono text-sm underline underline-offset-4 decoration-1 hover:text-pine transition-colors"
+              >
+                Software resume (PDF) &#8595;
+              </a>
+              <a
                 href="/Lemine-Mbareck-Resume.pdf"
                 download
                 className="font-mono text-sm underline underline-offset-4 decoration-1 hover:text-pine transition-colors"
               >
-                Download resume (PDF) &#8595;
+                Data resume (PDF) &#8595;
               </a>
               <a
                 href="https://linkedin.com/in/lemine-mbareck"

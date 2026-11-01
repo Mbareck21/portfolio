@@ -79,7 +79,7 @@ export function Navigation() {
             ))}
             <ThemeToggle />
             <a
-              href="/Lemine-Mbareck-Resume.pdf"
+              href="/Lemine-Mbareck-Resume-Software.pdf"
               download
               className="font-mono text-xs uppercase tracking-widest border border-ink px-3.5 py-2 hover:bg-ink hover:text-paper transition-colors"
             >
@@ -118,11 +118,18 @@ export function Navigation() {
                 </a>
               ))}
               <a
+                href="/Lemine-Mbareck-Resume-Software.pdf"
+                download
+                className="font-mono text-xs uppercase tracking-widest text-ink"
+              >
+                Software resume (PDF) &#8595;
+              </a>
+              <a
                 href="/Lemine-Mbareck-Resume.pdf"
                 download
                 className="font-mono text-xs uppercase tracking-widest text-ink"
               >
-                Download resume (PDF) &#8595;
+                Data resume (PDF) &#8595;
               </a>
             </div>
           </div>

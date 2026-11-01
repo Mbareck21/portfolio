@@ -2,6 +2,18 @@ import { SectionHeader } from "./SectionHeader";
 
 const categories = [
   {
+    title: "Software Engineering",
+    skills: [
+      "TypeScript & JavaScript",
+      "React & Next.js (App Router)",
+      "Node.js & REST APIs",
+      "MongoDB & Mongoose",
+      "Stripe Connect payments",
+      "Installable, offline-ready web apps (PWAs)",
+      "Git & GitHub pull requests",
+    ],
+  },
+  {
     title: "Data Engineering",
     skills: [
       "SQL (Snowflake, SQL Server, PostgreSQL)",
@@ -10,29 +22,18 @@ const categories = [
       "Data modeling (star schema)",
       "Data quality management & governance",
       "Batch job scheduling & monitoring",
-      "Git",
     ],
   },
   {
-    title: "BI & Analytics",
+    title: "Analytics & AI",
     skills: [
       "Power BI & DAX",
       "Data storytelling & executive reporting",
-      "KPI definition & tracking",
-      "Root cause analysis",
+      "KPI definition & root cause analysis",
       "R (tidyverse, text mining)",
-      "Streamlit",
-    ],
-  },
-  {
-    title: "AI & Development",
-    skills: [
       "Agentic AI / LLM integration",
-      "GenAI-assisted workflows",
-      "Next.js & TypeScript",
-      "React & Node.js",
-      "MongoDB",
-      "REST APIs",
+      "RAG & LangChain",
+      "Streamlit",
     ],
   },
   {
@@ -55,7 +56,7 @@ export function Skills() {
         <SectionHeader
           index="01"
           title="Skills"
-          lede="A modern data stack paired with five years of people leadership. I move work from raw source systems to decisions leaders act on."
+          lede="I work in two tracks, full-stack development and data engineering, backed by five years of leading teams."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">

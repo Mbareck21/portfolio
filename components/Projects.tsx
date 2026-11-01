@@ -6,10 +6,27 @@ interface Project {
   description: string;
   technologies: string[];
   liveUrl?: string;
-  codeUrl: string;
+  codeUrl?: string;
 }
 
 const projects: Project[] = [
+  {
+    title: "CD Freight",
+    subtitle: "Relay freight marketplace",
+    description:
+      "A carrier-first freight marketplace. Shippers post loads and carriers book them in one tap. Long hauls split into relay legs at hubs, and a tour planner chains legs so drivers finish the day at home. Separate portals for drivers, dispatchers, shippers, and admins, with Stripe Connect payments and live relay tracking.",
+    technologies: ["Next.js 16", "React 19", "TypeScript", "MongoDB", "Stripe Connect"],
+    liveUrl: "https://cdfreight.com",
+  },
+  {
+    title: "Quest",
+    subtitle: "Adaptive learning app",
+    description:
+      "A grade 4 practice app for words, reading, and math that my son uses every day. It has spaced repetition, adaptive math difficulty, and AI-generated reading passages, and it installs on Android as a PWA.",
+    technologies: ["Next.js 16", "TypeScript", "MongoDB", "Groq"],
+    liveUrl: "https://edu-app-beta-eight.vercel.app",
+    codeUrl: "https://github.com/Mbareck21/Edu-app",
+  },
   {
     title: "TrendSpark",
     subtitle: "Agentic AI content pipeline",
@@ -64,7 +81,7 @@ export function Projects() {
         <SectionHeader
           index="02"
           title="Projects"
-          lede="Selected work across data engineering, analytics, and AI. Each project ships with source code, and three run live."
+          lede="Selected work across software engineering, data engineering, and AI. Each project links to a live app, its source code, or both."
         />
 
         <ul>
@@ -105,14 +122,16 @@ export function Projects() {
                       Live &#8599;
                     </a>
                   )}
-                  <a
-                    href={project.codeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 decoration-1 text-ink/70 hover:text-pine transition-colors"
-                  >
-                    Source &#8599;
-                  </a>
+                  {project.codeUrl && (
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 decoration-1 text-ink/70 hover:text-pine transition-colors"
+                    >
+                      Source &#8599;
+                    </a>
+                  )}
                 </div>
               </div>
             </li>
